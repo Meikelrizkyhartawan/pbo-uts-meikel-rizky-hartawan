@@ -12,7 +12,6 @@ public class ZooFrame extends JFrame {
     private JButton addButton;
     private JTextArea logArea;
 
-    // Data storage (polymorphism: Mammal & Bird masuk ke list Animal)
     private ArrayList<Animal> zooAnimals = new ArrayList<>();
 
     public ZooFrame() {
@@ -20,10 +19,8 @@ public class ZooFrame extends JFrame {
         setSize(500, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Layout utama
         setLayout(new BorderLayout());
 
-        // === Input Panel ===
         JPanel inputPanel = new JPanel();
         inputPanel.setLayout(new GridLayout(5, 2));
 
@@ -49,16 +46,13 @@ public class ZooFrame extends JFrame {
 
         add(inputPanel, BorderLayout.NORTH);
 
-        // === Button ===
         addButton = new JButton("Add Animal");
         add(addButton, BorderLayout.CENTER);
 
-        // === Log Area ===
         logArea = new JTextArea();
         logArea.setEditable(false);
         add(new JScrollPane(logArea), BorderLayout.SOUTH);
 
-        // === Event Handling ===
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
